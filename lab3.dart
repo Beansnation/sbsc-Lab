@@ -1,22 +1,22 @@
-import "dart:core";
+import "dart:io";
 
 void main (){
   
-   //declaring variables
+   
    double aggregatecgpa;
    double totalGradepoints= 0;
    double percent;
 
-  var marks = List.filled(5, 0, growable: false);
-//the marks input
-marks[0]= 60;
-marks[1]= 70;
-marks[2]= 80;
-marks[3]= 90;
-marks[4]= 80;
+  var marks = List (5);
+
+marks[0]= prompt("input first subject grade");
+marks[1]= prompt("input second subject grade");;
+marks[2]= prompt("input third subject grade");;
+marks[3]= prompt("input fourth subject grade");;
+marks[4]= prompt("input fifth subject grade");;
  
- //find the aggregate by finding the average of the all the marks in the array
- for (int grade in marks){ 
+ print("marks = $marks");
+ for (double grade in marks){ 
    totalGradepoints += grade/10;
   }
   
@@ -24,5 +24,13 @@ marks[4]= 80;
   percent = aggregatecgpa * 9.5 ;
   
   print("The aggregate cgpa is $aggregatecgpa and the percentage cgpa is $percent percent");
+
+}
+
+ double prompt(String text, [double answer]){
+ print(text);
+  answer = double.parse(stdin.readLineSync());
+  return answer;
+  
 
 }
